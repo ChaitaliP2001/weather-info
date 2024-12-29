@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-info-app
+  namespace: weather-info
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather-info-app
+  template:
+    metadata:
+      labels:
+        app: weather-info-app
+    spec:
+      containers:
+      - name: weather-info-app
+        image: image-registry.openshift-image-registry.svc:5000/weather-info/weather-info-TAG:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: weather-info-service
+spec:
+  selector:
+    app: weather-info-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 81
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: weather-info-route
+spec:
+  to:
+    kind: Service
+    name: weather-info-service
+  port:
+    targetPort: 80
+  tls:
+    termination: edge
