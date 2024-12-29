@@ -2,7 +2,7 @@
   "name": "weather-info",
   "version": "1.0.0",
   "description": "A simple weather information web app.",
-  "main": "index.js",
+  "main": "api.js",
   "scripts": {
     "start": "node server.js",
     "build": "react-scripts build",
