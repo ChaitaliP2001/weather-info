@@ -4,9 +4,6 @@ FROM node:16 AS build
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the package.json and package-lock.json (if present)
-COPY package*.json ./
-
 # Install dependencies
 RUN npm install
 
