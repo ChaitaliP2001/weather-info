@@ -14,6 +14,32 @@
     "react",
     "nodejs"
   ],
+  "author": "Chaitali",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {}
+}
+{
+  "name": "weather-info",
+  "version": "1.0.0",
+  "description": "A simple weather information web app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "weather",
+    "react",
+    "nodejs"
+  ],
   "author": "ChaitaliP,
   "license": "MIT",
   "dependencies": {
