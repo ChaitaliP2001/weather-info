@@ -8,11 +8,11 @@ WORKDIR /app
 # This step ensures only these files are copied, preventing unnecessary changes.
 COPY package.json  ./
 
+COPY . ./
+
 # Install dependencies
 RUN npm install
-
 # Copy the rest of the application code
-COPY . ./
 
 # Build the project for production
 RUN npm run build
