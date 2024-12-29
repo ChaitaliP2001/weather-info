@@ -53,6 +53,6 @@ spec:
     kind: Service
     name: weather-info-service
   port:
-    targetPort: 80
+    targetPort: 81
   tls:
     termination: edge
